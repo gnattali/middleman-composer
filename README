@@ -1,0 +1,17 @@
+# 新規プロジェクトの場合
+docker compose run web middleman init
+（Yを押してGemfileは上書きする）
+
+# 20210824時点でのhotfix
+生成されたGemfileのautoprefixerのバージョンを
+gem 'middleman-autoprefixer', '~> 3'
+に変更
+
+# init後、もしくはGemfile編集後（既存プロジェクトへの設置の場合もここから）
+docker compose build
+
+# server
+docker compose up
+
+# build
+docker compose run web middleman build
